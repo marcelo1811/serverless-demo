@@ -1,7 +1,9 @@
-module.exports.handler = (evt, ctx, done) => {
-  done(null, {
+module.exports.handler = (event) => {
+  return {
     statusCode: 200,
     headers: {},
-    body: JSON.stringify({ message: "hello" }),
-  })
+    body: JSON.stringify({
+      message: "hello",
+    }),
+  }
 }

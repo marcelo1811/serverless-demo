@@ -1,5 +1,5 @@
-module.exports.handler = (event, ctx, done) => {
-  done(null, {
+module.exports.handler = (event) => {
+  return {
     statusCode: 200,
     body: JSON.stringify({
       data: {
@@ -8,5 +8,5 @@ module.exports.handler = (event, ctx, done) => {
         status: "open",
       },
     }),
-  })
+  }
 }
