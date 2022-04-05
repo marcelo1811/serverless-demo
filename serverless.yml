@@ -59,8 +59,27 @@ provider:
 #    - include-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  api:
+    handler: src/api/api.handler
+    events:
+      - httpApi:
+        path: /api
+        method: get
+  todos:
+    handler: src/api/todos.handler
+    events:
+      - httpApi:
+        path: /todo
+        method: get
+  todo:
+    handler: src/api/todo.handler
+    events:
+      - httpApi:
+        path: /todo/{id}
+        method: get
+        request:
+          parameters:
+            id: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
